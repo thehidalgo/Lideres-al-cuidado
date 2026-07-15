@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Líderes al Cuidado - TVN Media</title>
+    
+    <!-- Fuentes de Google de alta calidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tvn: {
+                            blue: '#0c4cb4',
+                            blueDark: '#083680',
+                            teal: '#0fa1a1',
+                            coral: '#ff7a60',
+                            light: '#f8fafc',
+                            dark: '#0f172a',
+                            muted: '#475569'
+                        }
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        lato: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Optimizaciones para comportamiento de app nativa en móviles */
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            background-color: #0c4cb4;
+        }
+        
+        /* Ocultar barra de scroll pero mantener funcionalidad */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Efecto de degradados corporativos de fondo, muy sutil sobre fondo claro */
+        .bg-waves {
+            background-image: radial-gradient(circle at 100% 0%, rgba(15, 161, 161, 0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 0% 100%, rgba(12, 76, 180, 0.06) 0%, transparent 60%);
+        }
+
+        /* Transiciones suaves de color para el termómetro */
+        .transition-width {
+            transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        }
+
+        /* Solución de altura real de pantalla en móviles (Chrome, Safari, Samsung Internet, etc.) */
+        #app-main {
+            height: 100vh;              /* fallback para navegadores muy antiguos */
+            height: 100dvh;             /* navegadores modernos */
+            height: var(--app-height);  /* fallback garantizado calculado por JS */
+        }
+        @media (min-width: 768px) {
+            #app-main {
+                height: 844px;
+            }
+        }
+    </style>
+</head>
+<body class="font-lato min-h-screen text-tvn-dark flex flex-col items-center justify-center overflow-hidden">
+
+    <!-- Contenedor Principal (Simula una pantalla de celular moderna) -->
+    <main id="app-main" class="w-full max-w-md md:my-4 md:rounded-[40px] md:shadow-[0_24px_50px_rgba(0,0,0,0.35)] md:border-8 md:border-slate-800 bg-tvn-light flex flex-col justify-between overflow-hidden relative">
+        
+        <!-- CABECERA DE LA APP -->
+        <header class="bg-gradient-to-r from-tvn-blue to-tvn-blueDark text-white px-5 pt-8 pb-5 rounded-b-[28px] shadow-lg flex flex-col gap-3 z-20">
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-[11px] font-poppins font-extrabold tracking-widest text-tvn-teal uppercase">
+                        Recursos Humanos | Liderazgo
+                    </span>
+                    <h1 class="text-2xl font-poppins font-extrabold leading-tight mt-1">LÍDERES AL CUIDADO</h1>
+                </div>
+                <div class="bg-white/10 p-2.5 rounded-xl border border-white/10 shrink-0">
+                    <i class="fa-solid fa-people-roof text-tvn-teal text-lg"></i>
+                </div>
+            </div>
+            <!-- Frase insignia de campaña, con más peso visual -->
+            <div class="border-t border-white/15 pt-3 flex flex-wrap items-center gap-2">
+                <span class="bg-tvn-coral text-white text-[10px] font-bold py-1 px-3 rounded-full uppercase tracking-wider">
+                    Campaña Oficial
+                </span>
+                <span class="text-sm text-white font-bold italic">
+                    "Cuidarnos también es parte del trabajo"
+                </span>
+            </div>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL SCROLLABLE -->
+        <section class="flex-grow overflow-y-auto no-scrollbar px-5 py-5 pb-24 z-10 bg-waves">
+            
+            <!-- PESTAÑA 1: INICIO -->
+            <div id="tab-content-inicio" class="tab-content space-y-5">
+                <!-- Banner Bienvenida -->
+                <div class="bg-gradient-to-br from-tvn-blue to-tvn-blueDark text-white p-5 rounded-3xl relative overflow-hidden shadow-md">
+                    <div class="absolute right-[-10px] bottom-[-10px] opacity-10">
+                        <i class="fa-solid fa-people-line text-[120px]"></i>
+                    </div>
+                    <h2 class="text-xl font-poppins font-extrabold leading-tight">¿SABÍAS QUE TU EQUIPO TE ESCUCHA?</h2>
+                    <p class="text-sm text-slate-100 mt-2 leading-relaxed">
+                        Como líder en TVN Media, tu empatía y rol activo son la primera línea de apoyo frente a la sobrecarga laboral. Pequeñas dinámicas diarias transforman el ambiente de tu departamento.
+                    </p>
+                </div>
+
+                <!-- Tarjetas de Acceso Rápido -->
+                <div class="space-y-3">
+                    <h3 class="text-sm font-poppins font-extrabold text-tvn-blue uppercase tracking-widest">Tus 3 pilares como líder</h3>
+                    
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex items-start gap-4 shadow-md">
+                        <span class="bg-tvn-teal/15 p-3 rounded-xl text-tvn-teal shrink-0"><i class="fa-solid fa-eye-dropper"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-base text-tvn-dark">Monitorear y Detectar</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Usa nuestro <strong>Termómetro</strong> interactivo para medir discretamente la fatiga antes del agotamiento.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex items-start gap-4 shadow-md">
+                        <span class="bg-tvn-coral/15 p-3 rounded-xl text-tvn-coral shrink-0"><i class="fa-solid fa-comments"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-base text-tvn-dark">Conversar con Empatía</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Usa nuestros <strong>Guiones de Diálogo</strong> estructurados para abordar al colaborador de manera constructiva.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex items-start gap-4 shadow-md">
+                        <span class="bg-tvn-blue/15 p-3 rounded-xl text-tvn-blue shrink-0"><i class="fa-solid fa-lightbulb"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-base text-tvn-dark">Establecer Buenas Prácticas</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Aplica sencillas acciones diarias para cuidar la desconexión del equipo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 2: DIAGNÓSTICO -->
+            <div id="tab-content-diagnostico" class="tab-content hidden space-y-4">
+                <div>
+                    <h2 class="text-xl font-poppins font-extrabold text-tvn-dark">Termómetro del Equipo</h2>
+                    <p class="text-sm text-tvn-muted mt-1">Monitorea el nivel de tensión de tus colaboradores. Marca las señales observadas en tu equipo para ver la recomendación preventiva:</p>
+                </div>
+
+                <!-- Banner Informativo / Instrucción Dinámica -->
+                <div class="bg-tvn-teal/10 border border-tvn-teal/30 p-4 rounded-2xl flex items-center gap-3">
+                    <span class="text-tvn-teal text-lg shrink-0"><i class="fa-solid fa-circle-info"></i></span>
+                    <p class="text-xs text-tvn-dark font-semibold leading-snug">
+                        ¡Prueba el Termómetro! Haz clic en las casillas de abajo para ver cómo varía la temperatura del equipo y qué debes hacer.
+                    </p>
+                </div>
+
+                <!-- Checklist Interactivo -->
+                <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 shadow-md">
+                    <h3 class="text-sm font-poppins font-bold text-tvn-blue uppercase tracking-wider border-b border-slate-200 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-square-check"></i> Lista de Observación Preventiva
+                    </h3>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-start gap-3 cursor-pointer p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                            <input type="checkbox" onchange="updateAlertCounter()" class="chk-alert mt-1 w-5 h-5 rounded text-tvn-teal focus:ring-tvn-teal border-slate-300">
+                            <span class="text-sm text-tvn-dark">Cambio brusco de temperamento (irritabilidad, silencio repentino o desgano).</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                            <input type="checkbox" onchange="updateAlertCounter()" class="chk-alert mt-1 w-5 h-5 rounded text-tvn-teal focus:ring-tvn-teal border-slate-300">
+                            <span class="text-sm text-tvn-dark">Aumento notable de errores inusuales en tareas rutinarias que ya dominaba.</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                            <input type="checkbox" onchange="updateAlertCounter()" class="chk-alert mt-1 w-5 h-5 rounded text-tvn-teal focus:ring-tvn-teal border-slate-300">
+                            <span class="text-sm text-tvn-dark">Expresiones verbales repetidas de fatiga, cansancio o falta de descanso.</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                            <input type="checkbox" onchange="updateAlertCounter()" class="chk-alert mt-1 w-5 h-5 rounded text-tvn-teal focus:ring-tvn-teal border-slate-300">
+                            <span class="text-sm text-tvn-dark">Dificultad evidente para concentrarse en reuniones o responder correos comunes.</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                            <input type="checkbox" onchange="updateAlertCounter()" class="chk-alert mt-1 w-5 h-5 rounded text-tvn-teal focus:ring-tvn-teal border-slate-300">
+                            <span class="text-sm text-tvn-dark">Aislamiento deliberado, ausencias repetidas a momentos grupales o turnos.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Barra Visual de Temperatura Dinámica -->
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl space-y-2 shadow-md">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="text-tvn-muted font-semibold uppercase tracking-wider">Temperatura del Equipo</span>
+                        <span id="temp-label" class="text-tvn-teal font-extrabold uppercase">Estable (0/5)</span>
+                    </div>
+                    <!-- Contenedor del Termómetro -->
+                    <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
+                        <div id="temp-bar" class="w-0 h-full bg-tvn-teal transition-width"></div>
+                    </div>
+                </div>
+
+                <!-- Caja de Resultados Dinámica -->
+                <div id="diagnostic-result" class="bg-white border border-dashed border-slate-300 p-5 rounded-3xl text-center shadow-sm">
+                    <p class="text-sm text-tvn-muted">Marca las señales del checklist para generar un diagnóstico y recomendación en tiempo real.</p>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 3: GUIONES DE CONVERSACIÓN -->
+            <div id="tab-content-conversacion" class="tab-content hidden space-y-4">
+                <div>
+                    <h2 class="text-xl font-poppins font-extrabold text-tvn-dark">Guiones de Diálogo Directo</h2>
+                    <p class="text-sm text-tvn-muted mt-1">Cómo abordar de manera empática estas situaciones sin herir susceptibilidades o generar resistencia:</p>
+                </div>
+
+                <!-- Guión 1 -->
+                <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-md">
+                    <div class="flex justify-between items-center flex-wrap gap-2">
+                        <span class="text-[11px] font-poppins font-bold bg-tvn-blue/10 text-tvn-blue px-2.5 py-1 rounded-full uppercase">Escenario 1: Sobrecarga visible</span>
+                        <button onclick="copyToClipboard('script-1')" class="text-xs text-white bg-tvn-blue hover:bg-tvn-blueDark px-3 py-1.5 rounded-lg flex items-center gap-1.5 active:scale-95 transition-all shadow-sm">
+                            <i class="fa-solid fa-copy"></i> Copiar Guión
+                        </button>
+                    </div>
+                    <h3 class="font-poppins font-bold text-base text-tvn-dark">Para colaboradores con exceso de tareas o ritmo pesado:</h3>
+                    <p id="script-1" class="text-sm text-tvn-dark italic leading-relaxed bg-tvn-light p-3 rounded-xl border border-slate-200">
+                        "Hola [Nombre], he notado que el volumen de trabajo y las tareas de estos días han estado intensos. Quería conversar contigo unos minutos de forma privada para ver cómo te sientes con las tareas actuales y qué podemos reorganizar juntos para equilibrar tu jornada."
+                    </p>
+                    <!-- Guía de Acción del Líder -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs border-t border-slate-200">
+                        <div class="text-tvn-teal"><i class="fa-solid fa-circle-check"></i> <strong>Hacer:</strong> Escuchar activamente y flexibilizar fechas.</div>
+                        <div class="text-tvn-coral"><i class="fa-solid fa-circle-xmark"></i> <strong>Evitar:</strong> Decir "a todos nos toca pesado".</div>
+                    </div>
+                </div>
+
+                <!-- Guión 2 -->
+                <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-md">
+                    <div class="flex justify-between items-center flex-wrap gap-2">
+                        <span class="text-[11px] font-poppins font-bold bg-tvn-coral/10 text-tvn-coral px-2.5 py-1 rounded-full uppercase">Escenario 2: Cambio de Ánimo o Aislamiento</span>
+                        <button onclick="copyToClipboard('script-2')" class="text-xs text-white bg-tvn-blue hover:bg-tvn-blueDark px-3 py-1.5 rounded-lg flex items-center gap-1.5 active:scale-95 transition-all shadow-sm">
+                            <i class="fa-solid fa-copy"></i> Copiar Guión
+                        </button>
+                    </div>
+                    <h3 class="font-poppins font-bold text-base text-tvn-dark">Si observas irritabilidad, cansancio notorio o distanciamiento:</h3>
+                    <p id="script-2" class="text-sm text-tvn-dark italic leading-relaxed bg-tvn-light p-3 rounded-xl border border-slate-200">
+                        "Hola [Nombre], he sentido que en estas últimas jornadas has estado un poco más reservado o distante de lo habitual. Me preocupo por ti y solo quería asegurarme de que todo esté en orden, tanto dentro como fuera de tu rol, y recordarte que mi puerta siempre está abierta."
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs border-t border-slate-200">
+                        <div class="text-tvn-teal"><i class="fa-solid fa-circle-check"></i> <strong>Hacer:</strong> Mostrar empatía genuina y apoyo.</div>
+                        <div class="text-tvn-coral"><i class="fa-solid fa-circle-xmark"></i> <strong>Evitar:</strong> Exigir "mejor actitud" de inmediato.</div>
+                    </div>
+                </div>
+
+                <!-- Guión 3 -->
+                <div class="bg-white border border-slate-200 p-5 rounded-3xl space-y-3 shadow-md">
+                    <div class="flex justify-between items-center flex-wrap gap-2">
+                        <span class="text-[11px] font-poppins font-bold bg-amber-500/10 text-amber-600 px-2.5 py-1 rounded-full uppercase">Escenario 3: Manejo de Resistencia</span>
+                        <button onclick="copyToClipboard('script-3')" class="text-xs text-white bg-tvn-blue hover:bg-tvn-blueDark px-3 py-1.5 rounded-lg flex items-center gap-1.5 active:scale-95 transition-all shadow-sm">
+                            <i class="fa-solid fa-copy"></i> Copiar Guión
+                        </button>
+                    </div>
+                    <h3 class="font-poppins font-bold text-base text-tvn-dark">Si el colaborador responde "estoy bien" pero se le nota estresado:</h3>
+                    <p id="script-3" class="text-sm text-tvn-dark italic leading-relaxed bg-tvn-light p-3 rounded-xl border border-slate-200">
+                        "Entiendo totalmente, [Nombre]. Respeto mucho tu espacio y me alegra oírlo. Aun así, quiero que sepas que en este equipo cuidar de nuestra salud es vital para hacer un buen trabajo. Si en algún momento necesitas pausar, redistribuir tareas o simplemente conversar, no dudes en decirme."
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs border-t border-slate-200">
+                        <div class="text-tvn-teal"><i class="fa-solid fa-circle-check"></i> <strong>Hacer:</strong> Validar su espacio y dejar la puerta abierta.</div>
+                        <div class="text-tvn-coral"><i class="fa-solid fa-circle-xmark"></i> <strong>Evitar:</strong> Presionar o insistir en que admita fatiga.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 4: CÓMO CUIDAR AL EQUIPO -->
+            <div id="tab-content-tips" class="tab-content hidden space-y-4">
+                <div>
+                    <h2 class="text-xl font-poppins font-extrabold text-tvn-dark">Cómo Cuidar al Equipo</h2>
+                    <p class="text-sm text-tvn-muted mt-1">Pequeñas rutinas de gestión diarias que reducen el desgaste de todo tu equipo:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Tip 1 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex gap-3 shadow-md">
+                        <span class="text-tvn-teal text-xl pt-1 shrink-0"><i class="fa-solid fa-toggle-on"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Desconexión Digital Efectiva</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Evita mandar correos, asignaciones o mensajes de chat fuera del horario de turno de tus colaboradores, a menos que sea una emergencia crítica de transmisión de última hora. Respetar el descanso evita la fatiga crónica.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tip 2 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex gap-3 shadow-md">
+                        <span class="text-tvn-coral text-xl pt-1 shrink-0"><i class="fa-solid fa-hourglass-half"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Reuniones de 45 Minutos</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Establece como regla general que las reuniones de coordinación duren máximo 45 minutos en lugar de una hora completa. Regálale a tu equipo esos 15 minutos restantes para pararse, hidratarse o estirar antes de la siguiente tarea.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tip 3 -->
+                    <div class="bg-white border border-slate-200 p-4 rounded-2xl flex gap-3 shadow-md">
+                        <span class="text-tvn-teal text-xl pt-1 shrink-0"><i class="fa-solid fa-person-walking-arrow-loop-left"></i></span>
+                        <div>
+                            <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Liderar con el Ejemplo</h4>
+                            <p class="text-sm text-tvn-muted mt-1">Sé el primero en el área de trabajo en levantarte, tomar agua y realizar una pausa rítmica. Cuando el equipo ve que su líder se cuida y respeta las pausas activas, ellos se sentirán con la confianza y permiso de hacer lo mismo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 5: PROTOCOLO RRHH -->
+            <div id="tab-content-protocolo" class="tab-content hidden space-y-4">
+                <div>
+                    <h2 class="text-xl font-poppins font-extrabold text-tvn-dark">Canales y Protocolos</h2>
+                    <p class="text-sm text-tvn-muted mt-1">¿Cómo actuar de manera coordinada con el departamento de Recursos Humanos?</p>
+                </div>
+
+                <!-- Flujograma Institucional -->
+                <div class="space-y-4 relative pl-4 border-l-2 border-slate-200">
+                    <div class="relative">
+                        <span class="absolute left-[-25px] top-1 bg-tvn-blue w-3.5 h-3.5 rounded-full border-2 border-white shadow"></span>
+                        <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Paso 1: Intervención de Primer Nivel</h4>
+                        <p class="text-sm text-tvn-muted leading-relaxed mt-1">Ofrece contención inicial en privado. Escucha al colaborador, reasigna tareas de forma temporal y estimula las pausas activas diarias en su módulo.</p>
+                    </div>
+
+                    <div class="relative pt-2">
+                        <span class="absolute left-[-25px] top-3 bg-tvn-teal w-3.5 h-3.5 rounded-full border-2 border-white shadow"></span>
+                        <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Paso 2: Seguimiento Semanal</h4>
+                        <p class="text-sm text-tvn-muted leading-relaxed mt-1">Observa la evolución de la actitud y el rendimiento. Revisa si las medidas temporales adoptadas aliviaron el estrés acumulado.</p>
+                    </div>
+
+                    <div class="relative pt-2">
+                        <span class="absolute left-[-25px] top-3 bg-tvn-coral w-3.5 h-3.5 rounded-full border-2 border-white shadow"></span>
+                        <h4 class="font-poppins font-bold text-sm text-tvn-dark uppercase tracking-wide">Paso 3: Notificación de Recursos Humanos</h4>
+                        <p class="text-sm text-tvn-muted leading-relaxed mt-1">Si la situación rebasa la carga laboral ordinaria y afecta significativamente su salud o ánimo, dirígete de manera confidencial al departamento de Recursos Humanos.</p>
+                    </div>
+                </div>
+
+                <!-- Botón de Contacto Institucional a RRHH -->
+                <div class="bg-white border border-slate-200 p-5 rounded-3xl text-center space-y-3 mt-4 shadow-md">
+                    <div class="text-2xl text-tvn-teal"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3 class="font-poppins font-bold text-base text-tvn-dark">Canal Confidencial de Recursos Humanos</h3>
+                    <p class="text-sm text-tvn-muted leading-relaxed">
+                        Para asesoría en casos complejos o de alto desgaste, contacta o dirígete directamente al departamento de <strong>Recursos Humanos</strong>.
+                    </p>
+                    <button onclick="copyEmailToClipboard()" class="inline-block w-full bg-tvn-teal hover:bg-tvn-teal/90 active:scale-95 text-white font-poppins font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-copy"></i> Copiar Correo de Recursos Humanos
+                    </button>
+                    <p class="text-xs text-tvn-muted italic mt-1">
+                        Tu reporte es tratado con la mayor reserva y profesionalismo.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR (ESTILO APP NATIVA CON 5 PESTAÑAS) -->
+        <nav class="absolute bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-2 py-2.5 rounded-t-[24px] shadow-[0_-8px_20px_rgba(0,0,0,0.08)] flex justify-around items-center gap-1 z-30">
+            <!-- Botón Tab Inicio -->
+            <button onclick="switchTab('inicio')" id="btn-tab-inicio" class="nav-btn flex flex-col items-center gap-0.5 text-white bg-tvn-blue shadow-md transition-all group w-1/5 py-2 rounded-2xl active:scale-95">
+                <i class="fa-solid fa-house-chimney text-lg"></i>
+                <span class="text-[10px] font-bold font-poppins leading-none">Inicio</span>
+            </button>
+
+            <!-- Botón Tab Diagnóstico -->
+            <button onclick="switchTab('diagnostico')" id="btn-tab-diagnostico" class="nav-btn flex flex-col items-center gap-0.5 text-tvn-muted bg-slate-100 transition-all group w-1/5 py-2 rounded-2xl active:scale-95">
+                <i class="fa-solid fa-temperature-half text-lg"></i>
+                <span class="text-[10px] font-bold font-poppins leading-none">Termómetro</span>
+            </button>
+
+            <!-- Botón Tab Conversación -->
+            <button onclick="switchTab('conversacion')" id="btn-tab-conversacion" class="nav-btn flex flex-col items-center gap-0.5 text-tvn-muted bg-slate-100 transition-all group w-1/5 py-2 rounded-2xl active:scale-95">
+                <i class="fa-solid fa-comment-dots text-lg"></i>
+                <span class="text-[10px] font-bold font-poppins leading-none">Guiones</span>
+            </button>
+
+            <!-- Botón Tab Cómo Cuidar al Equipo -->
+            <button onclick="switchTab('tips')" id="btn-tab-tips" class="nav-btn flex flex-col items-center gap-0.5 text-tvn-muted bg-slate-100 transition-all group w-1/5 py-2 rounded-2xl active:scale-95">
+                <i class="fa-solid fa-lightbulb text-lg"></i>
+                <span class="text-[10px] font-bold font-poppins leading-none">Cuidar</span>
+            </button>
+
+            <!-- Botón Tab Protocolo -->
+            <button onclick="switchTab('protocolo')" id="btn-tab-protocolo" class="nav-btn flex flex-col items-center gap-0.5 text-tvn-muted bg-slate-100 transition-all group w-1/5 py-2 rounded-2xl active:scale-95">
+                <i class="fa-solid fa-briefcase text-lg"></i>
+                <span class="text-[10px] font-bold font-poppins leading-none">RRHH</span>
+            </button>
+        </nav>
+
+        <!-- TOAST / AVISO TEMPORAL DE NOTIFICACIÓN -->
+        <div id="toast-notif" class="absolute bottom-20 left-1/2 -translate-x-1/2 bg-tvn-dark text-white font-poppins font-bold text-xs py-2 px-5 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+            ¡Texto copiado al portapapeles! 📋
+        </div>
+
+    </main>
+
+    <!-- PROGRAMACIÓN DE COMPORTAMIENTO INTERACTIVO -->
+    <script>
+        // Solución de altura real de pantalla en móviles: calcula la altura visible
+        // real usando window.innerHeight, que se actualiza cuando la barra de
+        // direcciones del navegador (Chrome, Samsung Internet, etc.) aparece o desaparece.
+        function setAppHeight() {
+            document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+        }
+        window.addEventListener('resize', setAppHeight);
+        window.addEventListener('orientationchange', setAppHeight);
+        setAppHeight();
+
+        // Función para cambiar de pestañas de manera fluida
+        function switchTab(tabId) {
+            // Ocultar todos los contenidos de pestaña
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Mostrar el contenido seleccionado
+            document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+
+            // Resetear todos los estilos de botones de navegación a inactivos
+            const tabButtons = ['inicio', 'diagnostico', 'conversacion', 'tips', 'protocolo'];
+            tabButtons.forEach(btn => {
+                const buttonEl = document.getElementById(`btn-tab-${btn}`);
+                if (btn === tabId) {
+                    buttonEl.className = "nav-btn flex flex-col items-center gap-0.5 text-white bg-tvn-blue shadow-md transition-all group w-1/5 py-2 rounded-2xl active:scale-95";
+                } else {
+                    buttonEl.className = "nav-btn flex flex-col items-center gap-0.5 text-tvn-muted bg-slate-100 transition-all group w-1/5 py-2 rounded-2xl active:scale-95";
+                }
+            });
+        }
+
+        // Función dinámica para actualizar el termómetro y barra visual
+        function updateAlertCounter() {
+            const checkboxes = document.querySelectorAll('.chk-alert');
+            let activeCount = 0;
+            checkboxes.forEach(chk => {
+                if(chk.checked) activeCount++;
+            });
+
+            // Elementos del Termómetro
+            const tempBar = document.getElementById('temp-bar');
+            const tempLabel = document.getElementById('temp-label');
+            const resultContainer = document.getElementById('diagnostic-result');
+
+            // Actualizar la Barra y su Color
+            const widthPercentage = (activeCount / checkboxes.length) * 100;
+            tempBar.style.width = `${widthPercentage}%`;
+
+            if(activeCount === 0) {
+                tempBar.className = "w-0 h-full bg-tvn-teal transition-width";
+                tempLabel.innerText = "Estable (0/5)";
+                tempLabel.className = "text-tvn-teal font-extrabold uppercase";
+                
+                resultContainer.innerHTML = `
+                    <p class="text-sm text-tvn-muted">Marca las señales del checklist para generar un diagnóstico y recomendación en tiempo real.</p>
+                `;
+                resultContainer.className = "bg-white border border-dashed border-slate-300 p-5 rounded-3xl text-center shadow-sm";
+            } else if(activeCount <= 2) {
+                tempBar.className = "h-full bg-tvn-teal transition-width";
+                tempLabel.innerText = `Sutil (${activeCount}/5)`;
+                tempLabel.className = "text-tvn-teal font-extrabold uppercase";
+
+                resultContainer.innerHTML = `
+                    <div class="text-tvn-teal text-xl mb-1"><i class="fa-solid fa-temperature-empty"></i></div>
+                    <h4 class="text-sm font-poppins font-bold text-tvn-dark uppercase tracking-wide">Alerta Leve / Cansancio del Turno</h4>
+                    <p class="text-sm text-tvn-muted mt-1 leading-relaxed">Estas señales son normales en picos de alta transmisión o coberturas especiales. Fomenta que tu colaborador haga uso de la aplicación móvil de <strong>Pausas Activas</strong> durante la jornada.</p>
+                `;
+                resultContainer.className = "bg-tvn-teal/10 border border-tvn-teal/30 p-5 rounded-3xl text-center shadow-md";
+            } else if(activeCount <= 4) {
+                tempBar.className = "h-full bg-amber-500 transition-width";
+                tempLabel.innerText = `Cálido (${activeCount}/5)`;
+                tempLabel.className = "text-amber-600 font-extrabold uppercase";
+
+                resultContainer.innerHTML = `
+                    <div class="text-amber-500 text-xl mb-1"><i class="fa-solid fa-temperature-half"></i></div>
+                    <h4 class="text-sm font-poppins font-bold text-tvn-dark uppercase tracking-wide">Alerta Moderada / Sobrecarga Activa</h4>
+                    <p class="text-sm text-tvn-muted mt-1 leading-relaxed">Se detectan señales consistentes de estrés prolongado. Recomendamos abrir un espacio privado de 5 minutos y conversar con el colaborador usando el <strong>Guión de Diálogo (Escenario 1)</strong>.</p>
+                `;
+                resultContainer.className = "bg-amber-50 border border-amber-300 p-5 rounded-3xl text-center shadow-md";
+            } else {
+                tempBar.className = "h-full bg-tvn-coral transition-width";
+                tempLabel.innerText = `Crítico (${activeCount}/5)`;
+                tempLabel.className = "text-tvn-coral font-extrabold uppercase";
+
+                resultContainer.innerHTML = `
+                    <div class="text-tvn-coral text-xl mb-1"><i class="fa-solid fa-temperature-high"></i></div>
+                    <h4 class="text-sm font-poppins font-bold text-tvn-dark uppercase tracking-wide">Alerta Elevada / Riesgo de Agotamiento</h4>
+                    <p class="text-sm text-tvn-muted mt-1 leading-relaxed">Nivel crítico de cansancio. Te recomendamos tener una charla inmediata usando los <strong>Guiones 2 y 3</strong>, y reportar el caso de manera confidencial a tu <strong>Business Partner de Gestión de Personas</strong>.</p>
+                `;
+                resultContainer.className = "bg-tvn-coral/10 border border-tvn-coral/30 p-5 rounded-3xl text-center shadow-md";
+            }
+        }
+
+        // Función segura de copia al portapapeles con compatibilidad de iframe
+        function copyToClipboard(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            executeCopy(textToCopy, "¡Guión copiado al portapapeles! 📋");
+        }
+
+        // Función para copiar el correo institucional de Recursos Humanos
+        function copyEmailToClipboard() {
+            executeCopy("MMunozS@tvnmedia.com", "¡Correo de Recursos Humanos copiado! ✉️");
+        }
+
+        // Función base de copiado
+        function executeCopy(text, message) {
+            // Creamos un elemento textarea invisible temporal
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = text;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            
+            try {
+                // Ejecutamos el comando de copia de manera tradicional (seguro dentro de iFrames)
+                document.execCommand('copy');
+                
+                // Mostrar alerta visual temporal (Toast)
+                const toast = document.getElementById('toast-notif');
+                toast.innerText = message;
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+                
+                // Ocultar toast en 2 segundos
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100');
+                    toast.classList.add('opacity-0');
+                }, 2000);
+                
+            } catch (err) {
+                console.error('Error al intentar copiar texto: ', err);
+            }
+            
+            document.body.removeChild(tempTextarea);
+        }
+    </script>
+</body>
+</html>
