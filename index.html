@@ -67,12 +67,7 @@
             transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
         }
 
-        /* Solución de altura real de pantalla en móviles (Chrome, Safari, Samsung Internet, etc.) */
-        #app-main {
-            height: 100vh;              /* fallback para navegadores muy antiguos */
-            height: 100dvh;             /* navegadores modernos */
-            height: var(--app-height);  /* fallback garantizado calculado por JS */
-        }
+        /* En escritorio, el contenedor recupera su tamaño fijo tipo "marco de celular" */
         @media (min-width: 768px) {
             #app-main {
                 height: 844px;
@@ -83,7 +78,7 @@
 <body class="font-lato min-h-screen text-tvn-dark flex flex-col items-center justify-center overflow-hidden">
 
     <!-- Contenedor Principal (Simula una pantalla de celular moderna) -->
-    <main id="app-main" class="w-full max-w-md md:my-4 md:rounded-[40px] md:shadow-[0_24px_50px_rgba(0,0,0,0.35)] md:border-8 md:border-slate-800 bg-tvn-light flex flex-col justify-between overflow-hidden relative">
+    <main id="app-main" class="fixed inset-0 md:static w-full max-w-md md:h-[844px] md:my-4 md:rounded-[40px] md:shadow-[0_24px_50px_rgba(0,0,0,0.35)] md:border-8 md:border-slate-800 bg-tvn-light flex flex-col justify-between overflow-hidden md:relative">
         
         <!-- CABECERA DE LA APP -->
         <header class="bg-gradient-to-r from-tvn-blue to-tvn-blueDark text-white px-5 pt-8 pb-5 rounded-b-[28px] shadow-lg flex flex-col gap-3 z-20">
